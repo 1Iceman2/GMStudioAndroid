@@ -34,7 +34,6 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_grass</object>
