@@ -31,9 +31,17 @@
       <sprite>sprites\spr_ragdoll_body</sprite>
       <sprite>sprites\spr_ragdoll_head</sprite>
     </sprites>
+    <sprite>sprites\spr_Player_Mask</sprite>
+    <sprite>sprites\spr_Map_Mask</sprite>
+    <sprite>sprites\spr_Enemy_Mask</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_Value_Limit.gml</script>
+    <script>scripts\scr_Value_Toggle.gml</script>
+    <script>scripts\scr_Map_Spawn.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_grass</object>
@@ -54,8 +62,13 @@
       <object>objects\obj_ragdoll_parent</object>
       <object>objects\obj_ragdoll_create</object>
     </objects>
+    <object>objects\obj_Player_Mask</object>
+    <object>objects\obj_Map_Mask</object>
+    <object>objects\obj_Enemy_Mask</object>
+    <object>objects\obj_Map_Controller</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\roo_Test</room>
     <room>rooms\room1</room>
     <room>rooms\room0</room>
   </rooms>
