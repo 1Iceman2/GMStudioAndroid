@@ -25,8 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//create
+            <string>//motion
 xspeed=0; yspeed=0; ygravity=0
+
+//laser
+laser=noone; laserx=640; lasery=mouse_y
 </string>
           </argument>
         </arguments>
@@ -52,7 +55,7 @@ xspeed=0; yspeed=0; ygravity=0
             <string>//move
 if x&lt;room_width*.5
 {if !place_meeting(x+global.xspeed*global.delta,y,obj_Map_Mask)
-xspeed=global.xspeed}
+xspeed=global.xspeed*.07}
 else xspeed=0
 
 //fall
@@ -64,9 +67,17 @@ if place_meeting(x,y-yspeed+4,obj_Map_Mask)
 move_contact_all(270,8)}
 
 //jump
-if keyboard_check_pressed(vk_space)
+if mouse_check_button_pressed(mb_left)
 {if land=1 yspeed=6}
 x+=xspeed*global.delta; y-=yspeed*global.delta; yspeed-=ygravity*global.delta
+
+//laser pointer
+laser=collision_line(x,y-48,640,mouse_y,obj_Map_Mask,1,0)
+if laser=noone
+{laserx=640; lasery=mouse_y}
+else
+{laserx=laser.x; lasery=laser.y}
+laser_dist=point_distance(x,y-48,laser.x,laser.y)
 </string>
           </argument>
         </arguments>
@@ -92,9 +103,36 @@ x+=xspeed*global.delta; y-=yspeed*global.delta; yspeed-=ygravity*global.delta
             <string>//collide
 x=xprevious; y=yprevious
 if (abs(xspeed)&gt;=abs(yspeed) and !place_meeting(x+xspeed*global.delta,y,obj_Map_Mask))
-x+=xspeed*global.delta else x-=other.xspeed*global.delta+1
+x+=xspeed*global.delta else {x-=other.xspeed*global.delta+1; global.xspeed-=.01}
 if !place_meeting(x,y-yspeed*global.delta,obj_Map_Mask)
 y-=yspeed*global.delta else y-=other.yspeed*global.delta
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//draw player
+draw_self()
+
+//draw laser
+draw_line_color(x,y-48,laserx,lasery,c_red,c_red)
 </string>
           </argument>
         </arguments>

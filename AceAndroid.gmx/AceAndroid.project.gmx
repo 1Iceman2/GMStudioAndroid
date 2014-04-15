@@ -6,66 +6,44 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_turretbase</sprite>
-    <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_player_jump</sprite>
-    <sprite>sprites\spr_player_running_left</sprite>
-    <sprite>sprites\spr_player_running_right</sprite>
-    <sprite>sprites\but_arrowleft</sprite>
-    <sprite>sprites\but_jump</sprite>
-    <sprite>sprites\but_arrowright</sprite>
-    <sprite>sprites\spr_grass</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_gore</sprite>
-    <sprite>sprites\spr_ufo</sprite>
-    <sprite>sprites\spr_beam</sprite>
-    <sprite>sprites\spr_gun</sprite>
-    <sprite>sprites\spr_gun_flip</sprite>
-    <sprite>sprites\spr_aiming</sprite>
-    <sprite>sprites\spr_bullet</sprite>
-    <sprites name="anologuestick">
-      <sprite>sprites\Circle_Pad_Spr</sprite>
-      <sprite>sprites\Circle_Stick_Spr</sprite>
+    <sprites name="Weapons">
+      <sprite>sprites\spr_Weapon_1</sprite>
     </sprites>
-    <sprites name="ragdoll">
-      <sprite>sprites\spr_ragdoll_body</sprite>
-      <sprite>sprites\spr_ragdoll_head</sprite>
+    <sprites name="Masks">
+      <sprite>sprites\spr_Map_Mask</sprite>
+      <sprite>sprites\spr_Enemy_Mask</sprite>
     </sprites>
-    <sprite>sprites\spr_Player_Mask</sprite>
-    <sprite>sprites\spr_Map_Mask</sprite>
-    <sprite>sprites\spr_Enemy_Mask</sprite>
+    <sprites name="Player">
+      <sprite>sprites\spr_Player_Mask</sprite>
+      <sprite>sprites\spr_Player</sprite>
+    </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <backgrounds name="Map">
+      <background>background\bac_Map_1_1</background>
+      <background>background\bac_Map_1_2</background>
+    </backgrounds>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_Value_Limit.gml</script>
     <script>scripts\scr_Value_Toggle.gml</script>
-    <script>scripts\scr_Map_Spawn.gml</script>
+    <scripts name="Map">
+      <script>scripts\scr_Map_Init.gml</script>
+      <script>scripts\scr_Map_Draw.gml</script>
+      <script>scripts\scr_Map_Spawn.gml</script>
+      <script>scripts\scr_Map_Control.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_player</object>
-    <object>objects\obj_grass</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_gore</object>
-    <object>objects\obj_controller</object>
-    <object>objects\obj_controller_virtualjoystick</object>
-    <object>objects\obj_setup</object>
-    <object>objects\obj_beam</object>
-    <object>objects\obj_ufo</object>
-    <object>objects\obj_gun</object>
-    <object>objects\obj_bullet</object>
-    <objects name="ragdoll">
-      <object>objects\obj_static_parent</object>
-      <object>objects\obj_dynamic_parent</object>
-      <object>objects\obj_ragdoll_head</object>
-      <object>objects\obj_ragdoll_body</object>
-      <object>objects\obj_ragdoll_parent</object>
-      <object>objects\obj_ragdoll_create</object>
-    </objects>
     <object>objects\obj_Player_Mask</object>
-    <object>objects\obj_Map_Mask</object>
-    <object>objects\obj_Enemy_Mask</object>
-    <object>objects\obj_Map_Controller</object>
+    <objects name="Map">
+      <object>objects\obj_Map_Controller</object>
+      <object>objects\obj_Map_Mask</object>
+    </objects>
+    <objects name="Enemy">
+      <object>objects\obj_Enemy_Mask</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\roo_Test</room>

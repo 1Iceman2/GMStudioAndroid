@@ -30,8 +30,8 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -53,7 +53,7 @@
     <instance objName="obj_Player_Mask" x="184" y="88" name="inst_9A30066F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Map_Controller" x="0" y="0" name="inst_BA26885C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Map_Mask" x="-96" y="328" name="inst_F3DF0C4E" locked="0" code="xspeed=0; yspeed=0" scaleX="26" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Enemy_Mask" x="-96" y="-24" name="inst_728433C2" locked="0" code="xspeed=0; yspeed=0; damage=-1" scaleX="1" scaleY="11" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Enemy_Mask" x="-96" y="-24" name="inst_728433C2" locked="0" code="xspeed=0; yspeed=0; damage=-1&#xA;" scaleX="1" scaleY="11" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
