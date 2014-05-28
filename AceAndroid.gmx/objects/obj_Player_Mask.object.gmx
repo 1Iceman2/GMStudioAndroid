@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//motion
-xspeed=0; yspeed=0; ygravity=0
+            <string>//move
+scr_Move_Init()
 
 //laser
 laser=noone; laserx=640; lasery=mouse_y
@@ -53,23 +53,32 @@ laser=noone; laserx=640; lasery=mouse_y
           <argument>
             <kind>1</kind>
             <string>//move
-if x&lt;room_width*.5
-{if !place_meeting(x+global.xspeed*global.delta,y,obj_Map_Mask)
-xspeed=global.xspeed*.07}
-else xspeed=0
+scr_Move_Control()
+image_angle=global.gravdir+90
 
-//fall
-land=0; ygravity=.25
+//collide
+scr_Move_Collide()
+//if room_width*.5-x&gt;global.xspeed x=room_width*.5
+//if room_height*.5-y&gt;global.yspeed y=room_height*.5
+
+//gravity
+land=0
 if place_meeting(x,y-64-yspeed,obj_Map_Mask)
 yspeed=-1
+
 if place_meeting(x,y-yspeed+4,obj_Map_Mask)
-{yspeed=0; ygravity=0; land=1
-move_contact_all(270,8)}
+{yspeed=0; ygrav=0; land=1
+move_contact_all(global.gravdir,8)}
 
 //jump
-if mouse_check_button_pressed(mb_left)
-{if land=1 yspeed=6}
-x+=xspeed*global.delta; y-=yspeed*global.delta; yspeed-=ygravity*global.delta
+if mouse_check_button(mb_left)
+{if land=1
+{xspeed+=lengthdir_x(5,global.gravdir+180)
+yspeed+=lengthdir_y(5,global.gravdir+180)}}
+
+//restart
+if keyboard_check_pressed(ord('R'))
+room_restart()
 
 //laser pointer
 laser=collision_line(x,y-48,640,mouse_y,obj_Map_Mask,1,0)
@@ -103,7 +112,7 @@ laser_dist=point_distance(x,y-48,laser.x,laser.y)
             <string>//collide
 x=xprevious; y=yprevious
 if (abs(xspeed)&gt;=abs(yspeed) and !place_meeting(x+xspeed*global.delta,y,obj_Map_Mask))
-x+=xspeed*global.delta else {x-=other.xspeed*global.delta+1; global.xspeed-=.01}
+x+=xspeed*global.delta else {x-=other.xspeed*global.delta+1; global.movespd-=other.xspeed*.002}
 if !place_meeting(x,y-yspeed*global.delta,obj_Map_Mask)
 y-=yspeed*global.delta else y-=other.yspeed*global.delta
 </string>

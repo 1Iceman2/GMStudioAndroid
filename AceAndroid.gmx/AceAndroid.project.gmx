@@ -26,13 +26,24 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_Value_Limit.gml</script>
-    <script>scripts\scr_Value_Toggle.gml</script>
     <scripts name="Map">
       <script>scripts\scr_Map_Init.gml</script>
       <script>scripts\scr_Map_Draw.gml</script>
       <script>scripts\scr_Map_Spawn.gml</script>
       <script>scripts\scr_Map_Control.gml</script>
+    </scripts>
+    <scripts name="Enemy">
+      <script>scripts\scr_Enemy_Control.gml</script>
+    </scripts>
+    <scripts name="Value">
+      <script>scripts\scr_Value_Toggle.gml</script>
+      <script>scripts\scr_Value_Limit.gml</script>
+    </scripts>
+    <scripts name="Move">
+      <script>scripts\scr_Move_Init.gml</script>
+      <script>scripts\scr_Move_Control.gml</script>
+      <script>scripts\scr_Move_Border.gml</script>
+      <script>scripts\scr_Move_Collide.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

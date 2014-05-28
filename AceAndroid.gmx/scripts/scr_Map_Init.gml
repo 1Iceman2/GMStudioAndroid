@@ -1,5 +1,14 @@
-//map init
-global.xspeed=1
+//move
+global.movespd=1
+global.movedir=0
+global.xspeed=0
+global.yspeed=0
+
+//gravity
+global.grav=.25
+global.gravdir=270
+
+//map
 global.delta=1
 global.game_state=1
 global.map_number=1
